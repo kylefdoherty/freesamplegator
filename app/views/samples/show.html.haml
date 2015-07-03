@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @sample.title
+%p
+  %b Link:
+  = @sample.link
+%p
+  %b Image:
+  = @sample.image
+%p
+  %b Summary:
+  = @sample.summary
+%p
+  %b Content:
+  = @sample.content
+%p
+  %b Pub date:
+  = @sample.pub_date
+
+= link_to 'Edit', edit_sample_path(@sample)
+\|
+= link_to 'Back', samples_path

@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: sample_gator_development
+
+test:
+  <<: *default
+  database: sample_gator_test
+
+production:
+  <<: *default
+  database: sample_gator_production
+  password: <%= ENV['SAMPLE_GATOR_DATABASE_PASSWORD'] %>

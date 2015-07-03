@@ -1,0 +1,16 @@
+.starter-template
+  %h1 Welcome to Free Sample Gator
+  %p.lead
+    The best Free Sample Aggregator on the interwebs!
+= link_to 'New Site', new_site_path
+
+- @sites.each do |site|
+  %div.sample
+    %h2= site.name
+    %h3= site.description
+    %ul.list-group
+    - site.latest_twenty.each do |sample|
+      %li.list-group-item
+        %h4= link_to sample.title, sample.link, target: '_blank'
+        %p.span.label.label-default #{time_ago_in_words(sample.pub_date)} old
+        %p.summary= raw sample.summary
