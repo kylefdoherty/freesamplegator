@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby "2.2.2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -26,6 +26,8 @@ gem 'feedjira'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "haml-rails", "~> 0.9"
 gem 'bootstrap-sass', '~> 3.3.5'
+
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
