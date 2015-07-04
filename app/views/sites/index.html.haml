@@ -2,7 +2,7 @@
   %h1 Welcome to Free Sample Gator
   %p.lead
     The best Free Sample Aggregator on the interwebs!
-= link_to 'New Site', new_site_path
+= link_to 'New Site', new_site_path if user_signed_in?
 
 - @sites.each do |site|
   %div.sample

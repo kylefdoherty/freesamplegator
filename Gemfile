@@ -28,6 +28,7 @@ gem "haml-rails", "~> 0.9"
 gem 'bootstrap-sass', '~> 3.3.5'
 
 gem 'rails_12factor', group: :production
+gem 'devise'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
