@@ -1,6 +1,12 @@
 class Site < ActiveRecord::Base
   has_many :samples, dependent: :destroy
 
+  def self.refresh_samples
+    Site.all.each do |site|
+      site.build_samples
+    end
+  end
+
   def build_samples
     feed = Feedjira::Feed.fetch_and_parse link
     feed.entries.each do |entry|
