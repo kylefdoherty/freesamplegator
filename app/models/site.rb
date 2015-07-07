@@ -3,12 +3,17 @@ class Site < ActiveRecord::Base
 
   def self.refresh_samples
     Site.all.each do |site|
-      site.build_samples
+      site.refresh
+    end
+  end
+
+  def refresh
+    feed.entries.each do |entry|
+      Sample.create(sample_params(entry)) unless Sample.exists?(title: entry.title)
     end
   end
 
   def build_samples
-    feed = Feedjira::Feed.fetch_and_parse link
     feed.entries.each do |entry|
       Sample.create(sample_params(entry))
     end
@@ -28,5 +33,9 @@ class Site < ActiveRecord::Base
       "summary"  => entry.summary,
       "site_id"  => id
     }
+  end
+
+  def feed
+    Feedjira::Feed.fetch_and_parse link
   end
 end
