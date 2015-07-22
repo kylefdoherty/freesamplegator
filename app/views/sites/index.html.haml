@@ -4,7 +4,8 @@
 
 = link_to 'New Site', new_site_path if user_signed_in?
 
-= render "google_ads"
+.banner
+  = google_adsense_include_tag client: 'ca-pub-4732305755992322', slot: '7994503785', format: 'auto'
 
 - @sites.each do |site|
   %div.sample
