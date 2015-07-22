@@ -29,6 +29,8 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'rails_12factor', group: :production
 gem 'devise'
 
+gem 'ads-rails'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'pry'

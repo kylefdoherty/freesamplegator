@@ -4,7 +4,8 @@
 
 = link_to 'New Site', new_site_path if user_signed_in?
 
-= render "google_ads"
+.banner
+  = render "google_ads"
 
 - @sites.each do |site|
   %div.sample
