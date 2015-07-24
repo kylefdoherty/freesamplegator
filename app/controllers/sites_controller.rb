@@ -4,15 +4,10 @@ class SitesController < ApplicationController
   # GET /sites
   # GET /sites.json
   def index
-    if params["site"]["name"].empty?
+    if params.fetch("site", {}).fetch("name",{}).empty?
       @sites = Site.all
     else
       @sites = Site.where(name: params["site"]["name"])
-    end
-
-    respond_to do |format|
-      format.html
-      format.json
     end
   end
 
