@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :sites, path: "free_samples" do
+  resources :sites do
     resources :samples
   end
   # The priority is based upon order of creation: first created -> highest priority.

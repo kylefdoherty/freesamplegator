@@ -7,6 +7,11 @@
 .banner
   = render "google_ads"
 
+.sort-samples
+  = simple_form_for(:site, url: sites_path, method: :get, html: { class: 'form-inline' }) do |f|
+    = f.input :name, required: false, collection: Site.all.map(&:name), prompt: "Filter Sites", label: false, selected: nil
+    = f.button :submit, "Filter"
+
 - @sites.each do |site|
   %div.sample
     %h2= site.name

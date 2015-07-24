@@ -4,7 +4,16 @@ class SitesController < ApplicationController
   # GET /sites
   # GET /sites.json
   def index
-    @sites = Site.all
+    if params["site"]["name"].empty?
+      @sites = Site.all
+    else
+      @sites = Site.where(name: params["site"]["name"])
+    end
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   # GET /sites/1

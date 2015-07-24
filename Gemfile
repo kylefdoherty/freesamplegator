@@ -30,6 +30,7 @@ gem 'rails_12factor', group: :production
 gem 'devise'
 
 gem 'ads-rails'
+gem 'simple_form'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
