@@ -7,6 +7,17 @@ class Site < ActiveRecord::Base
     end
   end
 
+  def self.trim_samples
+    Site.all.each do |site|
+      if site.samples.length >= 50
+        length = site.samples.length
+        ids = site.samples.slice(50..(length-1)).map(&:id)
+
+        Sample.where(id: ids).destroy_all
+      end
+    end
+  end
+
   def refresh
     feed.entries.each do |entry|
       Sample.create(sample_params(entry)) unless Sample.exists?(title: entry.title)
