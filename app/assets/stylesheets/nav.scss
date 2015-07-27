@@ -1,3 +1,15 @@
+$primary-color: #00C853;
+
+
 .navbar {
   margin-bottom: 100px;
+  background: $primary-color;
+  border-bottom: $primary-color;
+
+  .navbar-brand {
+    color: white;
+  }
 }
+
+
+

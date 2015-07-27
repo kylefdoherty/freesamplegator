@@ -1,11 +1,13 @@
+$primary-color: #00C853;
+
 .starter-template {
   text-align: center;
   margin-top: 100px;
 }
 
-
 .span.label {
   font-size: 1em;
+  background: $primary-color;
 }
 
 .sample {
