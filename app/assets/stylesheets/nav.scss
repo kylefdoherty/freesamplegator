@@ -5,9 +5,23 @@ $primary-color: #00C853;
   margin-bottom: 100px;
   background: $primary-color;
   border-bottom: $primary-color;
+  height: 75px;
 
   .navbar-brand {
     color: white;
+    width: 600px;
+
+    img {
+      float: left;
+      margin-right: 20px;
+    }
+
+    p {
+      font-size: 2em;
+      font-style: Georgia, Sans-serif;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
   }
 }
 
