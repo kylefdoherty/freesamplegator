@@ -5,6 +5,7 @@
     %title SampleGator
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
+    = render "facebook"
     = csrf_meta_tags
   %body
     %nav.navbar.navbar-inverse.navbar-fixed-top
@@ -16,9 +17,11 @@
             %span.icon-bar
             %span.icon-bar
           %a.navbar-brand{:href => "#{root_path}"}
-            %p Free Sample Gator
+            %h1 Free Sample Gator - Beta
         #navbar.collapse.navbar-collapse
           %ul.nav.navbar-nav
+            .fb-like{"data-action" => "like", "data-href" => "http://www.freesamplegator.co/", "data-layout" => "standard", "data-share" => "true", "data-show-faces" => "true"}
+
             / %li.active
             /   %a{:href => "#"} Home
             / %li
